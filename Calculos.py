@@ -1,3 +1,21 @@
+# /******************************************************************
+#  *               GESTIÓN DE CALIDAD - [Inplementacion normas PEP8]
+#  * 
+#  *   Nombre del Documento  : [Calculos]
+#  *   Versión               : [1.0]
+#  *   Fecha de Creación     : [22/8/2024]
+#  *   Fecha de Modificación : [25/8/2024]
+#  *   Autor                 : [Joaquin Sabranski - Ivan Samek - Tobias Perez Vallazza - Agustin Kenny - Felipe Mezana]
+#  *   Aprobado por          : [Kunysz]
+#  * 
+#  *   Descripción           : [Se busco implementar las normas de gestion de calidad PEP8]
+#  * 
+#  *   Histórico de Cambios  :
+#  *      [1.0] - [25/8/2024] - [Implmentacion de encabezado] - [Joaquin Sabranski]
+#  * 
+#  * ****************************************************************/
+
+
 import random
 
 def generate_random_numbers(count, minvalue, maxValue):
