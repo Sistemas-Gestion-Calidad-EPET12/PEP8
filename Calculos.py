@@ -3,58 +3,62 @@ import random
 def generate_random_numbers(count, minvalue, maxValue):
     numbers = []
     for i in range(count):
-        n = random.randint(minvalue, maxValue)
-        numbers.append(n)
+        number = random.randint(minvalue, maxValue)
+        numbers.append(number)
     return numbers
 
-def bubbleSort(arr):
-    n = len(arr)
-    for i in range(n-1):
-        for j in range(0, n-i-1):
-            if arr[j]>arr[j+1]:
-                arr[j],arr[j+1] = arr[j+1], arr[j]
+def bubbleSort(array):
+    lista = len(array)
+    for num in range(lista-1):
+        for valor in range(0, num-lista-1):
+            if array [valor] > array [valor+1]:
+                array [valor], array [valor+1] = array [valor+1], array [valor]
 
-def find_minimum(arr):
-  min_value = arr[0]
-  for i in arr:
-      if i<min_value:
-           min_value = i
-  return min_value
+def find_minimum(array):
+    min_value = array[0]
+    for numero in array:
+        if numero < min_value:
+            min_value = numero
+    return min_value
 
-def find_maximum(arr):
-    maxValue = arr[0]
-    for i in arr:
-        if i> maxValue:
-            maxValue = i
+def find_maximum(array):
+    maxValue = array[0]
+    for numero in array:
+        if numero > maxValue:
+            maxValue = numero
     return maxValue
 
-def calculate_average(arr):
-  s = 0
-  for i in arr:
-             s += i
-  avg = s/len(arr)
-  return avg
+def calculate_average(array):
+    valor = 0
+    for numero in array:
+        valor += numero
+    avg = valor / len(array)
+    return avg
 
-def count_occurrences(arr, value):
+def count_occurrences(array, value):
     count = 0
-    for i in arr:
-        if i==value:
+    for numero in array:
+        if numero == value:
             count += 1
     return count
 
-def unique_values(arr):
+def unique_values(array):
     unique = []
-    for i in arr:
-        if i not in unique:
-            unique.append(i)
+    for numero in array:
+        if numero not in unique:
+            unique.append(numero)
     return unique
-
-def print_statistics(arr):
+######################################################################################################################################################
+def print_statistics(array):
     print("Statistics:")
-    print("Minimum:", find_minimum(arr)); print("Maximum:", find_maximum(arr))
-    print("Average:", calculate_average(arr))
-    print("Occurrences of 5 numbers :", count_occurrences(arr, 5)); print("Unique values:", unique_values(arr))
-class NumberAnalyzer: 
+    print("Minimum:", find_minimum(array))
+    print("Maximum:", find_maximum(array))
+    print("Average:", calculate_average(array))
+    print("Occurrences of 5 numbers :", count_occurrences(array, 5))
+    print("Unique values:", unique_values(array))
+
+
+class number_analyzer: 
     def __init__(self, numbers):
         self.numbers = numbers
         self.sorted_numbers = []
@@ -64,31 +68,36 @@ class NumberAnalyzer:
         self.sorted_numbers = self.numbers.copy()
         bubbleSort(self.sorted_numbers)
         print_statistics(self.sorted_numbers)
+
+
 def palindrome(word):
     word = word.lower()
-    return word== word[::-1]
+    return word== word[:: -1]
 
-def fibonacci(n):
-   if n <=0:
-       return []
-   elif n ==1:
-       return [0]
-   elif n== 2:
-       return [0, 1]
-   fib_seq = [0, 1]
-   while len(fib_seq) < n:
-       fib_seq.append(fib_seq[-1] + fib_seq[-2]);return fib_seq
+def fibonacci(number):
+    if number <= 0:
+        return []
+    elif number == 1:
+        return [0]
+    elif number == 2:
+        return [0, 1]
+    fibonacci_sequence = [0, 1]
 
+    while len(fibonacci_sequence) < number:
+        fibonacci_sequence.append(fibonacci_sequence[-1] + fibonacci_sequence[-2])
+        return fibonacci_sequence
+########################################################################################################
 def factorial(n):
     result = 1
-    for i in range(2, n+1):
+    for i in range(2, n + 1):
         result *= i
     return result
+
 def find_primes(n):
     primes = []
-    for num in range(2,n +1):
+    for num in range(2, n + 1):
         is_prime = True
-        for i in range(2, int(num **0.5) +1):
+        for i in range(2, int(num **0.5) + 1):
             if num % i == 0:
                 is_prime = False
                 break
@@ -105,7 +114,8 @@ def print_prime_numbers(n):
     print(find_primes(n))
 
 def main():
-    numbers = generate_random_numbers(100,1,100);analyzer = NumberAnalyzer(numbers)
+    numbers = generate_random_numbers(100, 1, 100)
+    analyzer = number_analyzer(numbers)
     analyzer.analyze()
 
     word = "racecar"
