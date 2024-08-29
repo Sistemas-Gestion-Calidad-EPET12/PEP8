@@ -1,4 +1,4 @@
-# Actividad: Mejora de Código en Python según PEP8 y PEP257
+# Actividad 4: Mejora de Código en Python según PEP8 y PEP257
 
 ## Descripción de la Actividad
 
